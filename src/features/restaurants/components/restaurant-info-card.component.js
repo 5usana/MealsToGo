@@ -42,13 +42,16 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     rating = 4,
     isClosedTemporarily,
   } = restaurant;
-
+  const ratingArray = Array.from(new Array(Math.floor(rating)));
+  console.log(ratingArray);
   return (
     <RestaurantCard elevation={5}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Title>{name}</Title>
-        <SvgXml xml={star} />
+        {ratingArray.map(() => (
+          <SvgXml xml={star} width={20} height={20} />
+        ))}
         <Address>{address}</Address>
       </Info>
     </RestaurantCard>
