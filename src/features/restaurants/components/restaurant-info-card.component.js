@@ -30,6 +30,10 @@ const Info = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
+const Rating = styled.View`
+  flex-direction: row;
+`;
+
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Some Restaurant",
@@ -49,9 +53,11 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Title>{name}</Title>
-        {ratingArray.map(() => (
-          <SvgXml xml={star} width={20} height={20} />
-        ))}
+        <Rating>
+          {ratingArray.map(() => (
+            <SvgXml xml={star} width={20} height={20} />
+          ))}
+        </Rating>
         <Address>{address}</Address>
       </Info>
     </RestaurantCard>
