@@ -15,7 +15,7 @@ const RestaurantCardCover = styled(Card.Cover)`
 const Address = styled(Text)`
   font-family: ${(props) => props.theme.fonts.body}
   font-size: ${(props) => props.theme.fontSizes.caption}
-`
+`;
 
 const Title = styled(Text)`
   font-family: ${(props) => props.theme.fonts.heading};
@@ -24,7 +24,7 @@ const Title = styled(Text)`
 `;
 
 const Info = styled.View`
-  padding: ${(props) => props.theme.space[3]}
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
